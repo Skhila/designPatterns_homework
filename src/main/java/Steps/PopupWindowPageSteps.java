@@ -8,13 +8,18 @@ import org.openqa.selenium.By;
 import java.util.HashMap;
 import java.util.List;
 
+import static com.codeborne.selenide.Condition.appear;
+import static com.codeborne.selenide.Condition.not;
+
 public class PopupWindowPageSteps {
     StudentData studentData = new StudentData();
     PopupWindowPage popupWindowPage = new PopupWindowPage();
+    @Step("Check popup title visibility and text")
+    public boolean checkModalTitleVisibilityAndText(){
+//        Firstly, check if the title is visible
+        popupWindowPage.popupTitle.should(appear);
 
-    @Step("Get popup title from popup window")
-    public String getModalTitle(){
-        return popupWindowPage.popupTitle.getText();
+        return popupWindowPage.popupTitle.getText().equals("Thanks for submitting the form");
     }
     @Step("Get student info from popup window")
     public HashMap<String, String> getStudentInfoFromPopup(){

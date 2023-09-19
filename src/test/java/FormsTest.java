@@ -32,7 +32,7 @@ public class FormsTest extends BaseConfig {
 
         practiceFormPageSteps.setFirstName().setLastName().setGender().setMobileNumber().submit();
 
-        Assert.assertEquals(popupWindowPageSteps.getModalTitle(), "Thanks for submitting the form");
+        Assert.assertTrue(popupWindowPageSteps.checkModalTitleVisibilityAndText(), "There is NOT a valid modal title");
 
         Assert.assertTrue(popupWindowPageSteps.compareFullName(), "\nStudent name is not correct!\n");
         Assert.assertTrue(popupWindowPageSteps.compareGender(), "\nStudent gender is not correct!\n");

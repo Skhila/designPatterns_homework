@@ -11,8 +11,6 @@ import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Configuration.reportsFolder;
 
 public class BaseConfig {
-    protected SoftAssert softAssert;
-
     @BeforeClass
     public void setup(){
         ChromeOptions options = new ChromeOptions();
@@ -24,8 +22,6 @@ public class BaseConfig {
         screenshots=true;
         savePageSource = false;
         reportsFolder="src/main/resources/Reports/FailedTests";
-
-        softAssert = new SoftAssert();
     }
 
     @AfterClass
