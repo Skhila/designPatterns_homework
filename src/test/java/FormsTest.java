@@ -5,6 +5,9 @@ import Steps.HomePageSteps;
 import Steps.PopupWindowPageSteps;
 import Steps.PracticeFormPageSteps;
 import static com.codeborne.selenide.Selenide.*;
+
+import io.qameta.allure.Story;
+import jdk.jfr.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -17,7 +20,9 @@ public class FormsTest extends BaseConfig {
     PracticeFormPageSteps practiceFormPageSteps = new PracticeFormPageSteps();
     PopupWindowPageSteps popupWindowPageSteps = new PopupWindowPageSteps();
 
-    @Test
+    @Test(description = "Forms filling and Validating scenario")
+    @Description("Success form fill scenario")
+    @Story("Valid firstname, lastname, gender and mobile phone form fill test")
     public void formsTest(){
         open("https://demoqa.com/");
 

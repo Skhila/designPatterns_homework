@@ -17,7 +17,7 @@ public class PopupWindowPageSteps {
         return popupWindowPage.popupTitle.getText();
     }
     @Step("Get student info from popup window")
-    public HashMap<String, String> getStudentInfo(){
+    public HashMap<String, String> getStudentInfoFromPopup(){
         List<String> headers = popupWindowPage.studentInfoTableColumns.texts();
         int rowSize = popupWindowPage.studentInfoTableRows.size();
 
@@ -41,19 +41,19 @@ public class PopupWindowPageSteps {
     private HashMap<String, String> studentInfo;
     @Step("Compare Full Name")
     public boolean compareFullName(){
-        studentInfo = getStudentInfo();
+        studentInfo = getStudentInfoFromPopup();
         String studentFullName = studentData.firstName + " " + studentData.lastName;
         return studentFullName.equals(studentInfo.get("Student Name"));
     }
     @Step("Compare Gender")
     public boolean compareGender(){
-        studentInfo = getStudentInfo();
+        studentInfo = getStudentInfoFromPopup();
         String studentGender = studentData.gender;
         return studentGender.equals(studentInfo.get("Gender"));
     }
     @Step("Compare Mobile Number")
     public boolean compareMobileNumber(){
-        studentInfo = getStudentInfo();
+        studentInfo = getStudentInfoFromPopup();
         String studentMobileNumber = studentData.mobileNumber;
         return studentMobileNumber.equals(studentInfo.get("Mobile"));
     }
