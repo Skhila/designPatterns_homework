@@ -2,10 +2,16 @@
 
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Forms Test Using Page Object Model">
-    <test name="Forms Test">
+<suite name="Forms Test Using Page Object Model" parallel="tests">
+    <test name="Swoop Test Using PageFactory and Fluent API">
         <classes>
-            <class name="FormsTest"/>
+            <class name="PomWithFactorySwoopTest.SwoopTestWithFactory"/>
+        </classes>
+    </test>
+
+    <test name="Swoop Test Without PageFactory">
+        <classes>
+            <class name="PomWithoutFactorySwoopTest.SwoopWithoutFactory"/>
         </classes>
     </test>
 </suite>

@@ -1,7 +1,7 @@
-package Steps;
+package basicpom.Steps;
 
-import Data.StudentData;
-import Pages.PracticeFormPage;
+import basicpom.Data.StudentData;
+import basicpom.Pages.PracticeFormPage;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.executeJavaScript;

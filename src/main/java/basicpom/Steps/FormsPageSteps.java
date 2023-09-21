@@ -1,6 +1,6 @@
-package Steps;
+package basicpom.Steps;
 
-import Pages.FormsPage;
+import basicpom.Pages.FormsPage;
 import io.qameta.allure.Step;
 
 public class FormsPageSteps {
