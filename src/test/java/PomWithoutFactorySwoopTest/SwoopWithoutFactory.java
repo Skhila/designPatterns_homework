@@ -21,7 +21,7 @@ public class SwoopWithoutFactory extends BaseConfigSelenium {
     }
 
     @Test
-    public void swoopTestWithFactory(){
+    public void swoopTestWithoutFactory(){
         homePageSteps.goToMoviesPage();
 
         moviesPageSteps.clickFirstEastPointMovie();
