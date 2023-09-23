@@ -1,6 +1,6 @@
-package Steps;
+package basicpom.Steps;
 
-import Pages.HomePage;
+import basicpom.Pages.HomePage;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.open;

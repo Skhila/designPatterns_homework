@@ -1,9 +1,11 @@
-import ConfigClasses.BaseConfig;
-import Data.StudentData;
-import Steps.FormsPageSteps;
-import Steps.HomePageSteps;
-import Steps.PopupWindowPageSteps;
-import Steps.PracticeFormPageSteps;
+package BasicPomTests;
+
+import ConfigClasses.BaseConfigSelenide;
+import basicpom.Data.StudentData;
+import basicpom.Steps.FormsPageSteps;
+import basicpom.Steps.HomePageSteps;
+import basicpom.Steps.PopupWindowPageSteps;
+import basicpom.Steps.PracticeFormPageSteps;
 import static com.codeborne.selenide.Selenide.*;
 
 import io.qameta.allure.Story;
@@ -11,9 +13,7 @@ import jdk.jfr.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-
-
-public class FormsTest extends BaseConfig {
+public class FormsTest extends BaseConfigSelenide {
     StudentData studentData = new StudentData();
     HomePageSteps homePageSteps = new HomePageSteps();
     FormsPageSteps formsPageSteps = new FormsPageSteps();

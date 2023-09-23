@@ -1,7 +1,7 @@
-package Steps;
+package basicpom.Steps;
 
-import Data.StudentData;
-import Pages.PopupWindowPage;
+import basicpom.Data.StudentData;
+import basicpom.Pages.PopupWindowPage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import static com.codeborne.selenide.Condition.appear;
-import static com.codeborne.selenide.Condition.not;
 
 public class PopupWindowPageSteps {
     StudentData studentData = new StudentData();
