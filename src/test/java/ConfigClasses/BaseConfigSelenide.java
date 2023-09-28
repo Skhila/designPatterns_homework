@@ -1,6 +1,8 @@
 package ConfigClasses;
 
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.WebDriverRunner;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -20,6 +22,7 @@ public class BaseConfigSelenide {
         screenshots=true;
         savePageSource = false;
         reportsFolder="src/main/resources/Reports/FailedTests";
+
     }
 
     @AfterClass

@@ -60,10 +60,10 @@ public class MoviePopupPageSteps{
         return this;
     }
 
-    @Step("Congratulations, the Test has passed successfully! 🥳")
-    public void endTheTest(){
+    @Step("Congratulations, the Test has passed successfully! 🥳 Final Message: {finalMessage}")
+    public void endTheTest(String finalMessage){
         //    Finish the test peacefully 😉
-        System.out.println("That's all for this test 🥳👌");
+        System.out.println(finalMessage);
     }
 
 }

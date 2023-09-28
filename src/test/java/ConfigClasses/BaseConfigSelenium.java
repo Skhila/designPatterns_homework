@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeTest;
 
 public class BaseConfigSelenium {
     //    Setup Driver
-    public WebDriver driver;
+    protected static WebDriver driver;
     public Actions action;
     public JavascriptExecutor js;
 

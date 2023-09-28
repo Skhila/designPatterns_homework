@@ -2,7 +2,7 @@
 
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Forms Test Using Page Object Model" parallel="tests">
+<suite name="Swoop Test Using Page Object Model / Forms Test Using Selenide with Page Object Model">
     <test name="Swoop Test Using PageFactory and Fluent API">
         <classes>
             <class name="PomWithFactorySwoopTest.SwoopTestWithFactory"/>
@@ -14,4 +14,11 @@
             <class name="PomWithoutFactorySwoopTest.SwoopWithoutFactory"/>
         </classes>
     </test>
+
+    <test name="Forms Test Using Selenide And Page Object Model">
+        <classes>
+            <class name="BasicPomTests.FormsTest"/>
+        </classes>
+    </test>
 </suite>
+
