@@ -1,6 +1,7 @@
 package BasicPomTests;
 
 import ConfigClasses.BaseConfigSelenide;
+import ConfigClasses.Listeners.SelenideListener;
 import basicpom.Data.StudentData;
 import basicpom.Steps.FormsPageSteps;
 import basicpom.Steps.HomePageSteps;
@@ -8,11 +9,14 @@ import basicpom.Steps.PopupWindowPageSteps;
 import basicpom.Steps.PracticeFormPageSteps;
 import static com.codeborne.selenide.Selenide.*;
 
-import io.qameta.allure.Story;
-import jdk.jfr.Description;
+import io.qameta.allure.*;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(SelenideListener.class)
+@Epic("Tests Using selenide")
+@Feature("Forms Test")
 public class FormsTest extends BaseConfigSelenide {
     StudentData studentData = new StudentData();
     HomePageSteps homePageSteps = new HomePageSteps();
@@ -21,8 +25,9 @@ public class FormsTest extends BaseConfigSelenide {
     PopupWindowPageSteps popupWindowPageSteps = new PopupWindowPageSteps();
 
     @Test(description = "Forms filling and Validating scenario")
-    @Description("Success form fill scenario")
+    @Severity(SeverityLevel.MINOR)
     @Story("Valid firstname, lastname, gender and mobile phone form fill test")
+    @Description("This test navigates to practice forms page and simulates form fill")
     public void formsTest(){
         open("https://demoqa.com/");
 
