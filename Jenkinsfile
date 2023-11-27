@@ -12,7 +12,7 @@ pipeline {
         stage('Build Project') {
           steps {
             script {
-              sh 'mvn clean test'
+              bat 'mvn clean test'
             }
 
           }
@@ -21,7 +21,7 @@ pipeline {
         stage('Get Maven Version') {
           steps {
             script {
-              sh 'mvn --version'
+              bat 'mvn --version'
             }
 
           }
