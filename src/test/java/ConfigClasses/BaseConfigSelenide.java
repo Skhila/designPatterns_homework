@@ -15,6 +15,7 @@ public class BaseConfigSelenide {
     public void setup(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
+        options.addArguments("--remote-allow-origins=*");
         browserCapabilities = options;
         browserSize = null;
         timeout=15000;
