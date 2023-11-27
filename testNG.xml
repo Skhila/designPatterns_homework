@@ -6,10 +6,12 @@
     <test name="Swoop Test Using PageFactory and Fluent API">
         <classes>
             <class name="PomWithFactorySwoopTest.SwoopTestWithFactory"/>
+            <class name="BasicPomTests.FormsTest"/>
+            <class name="PomWithoutFactorySwoopTest.SwoopWithoutFactory"/>
         </classes>
     </test>
 
-    <test name="Swoop Test Without PageFactory">
+<!--     <test name="Swoop Test Without PageFactory">
         <classes>
             <class name="PomWithoutFactorySwoopTest.SwoopWithoutFactory"/>
         </classes>
@@ -19,6 +21,6 @@
         <classes>
             <class name="BasicPomTests.FormsTest"/>
         </classes>
-    </test>
+    </test> -->
 </suite>
 
