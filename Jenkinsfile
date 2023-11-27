@@ -2,35 +2,32 @@ pipeline {
   agent any
   stages {
     stage('Checkout') {
-      steps {
-        deleteDir()
-        checkout scm
-      }
+            steps {
+                // Checkout code from a specific branch
+                checkout([$class: 'GitSCM', branches: [[name: 'main']], userRemoteConfigs: [[url: 'https://github.com/Skhila/designPatterns_homework.git']]])
+            }
     }
 
-    stage('Run Maven Project') {
-      parallel {
-        stage('Maven Project') {
-          steps {
-            script {
-              bat 'mvn clean test'
-              bat 'mvn allure:report'
+    stage('Build and Version') {
+            parallel {
+                stage('Build Project') {
+                    steps {
+                        script {
+                            def mavenHome = tool 'Maven'
+                            sh "${mavenHome}/bin/mvn -f clean install"
+                        }
+                    }
+                }
+
+                stage('Get Maven Version') {
+                    steps {
+                        script {
+                            def mavenHome = tool 'Maven'
+                            sh "${mavenHome}/bin/mvn --version"
+                        }
+                    }
+                }
             }
-
-          }
         }
-
-        stage('Get Maven Version') {
-          steps {
-            script {
-              bat 'mvn --version'
-            }
-
-          }
-        }
-
-      }
-    }
-
   }
 }
