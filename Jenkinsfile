@@ -12,7 +12,7 @@ pipeline {
         stage('Build Project') {
           steps {
             script {
-              def mavenHome = tool 'Maven'
+              def mavenHome = tool 'MyMaven'
               sh "${mavenHome}/bin/mvn clean install"
             }
 
@@ -22,7 +22,7 @@ pipeline {
         stage('Get Maven Version') {
           steps {
             script {
-              def mavenHome = tool 'Maven'
+              def mavenHome = tool 'MyMaven'
               sh "${mavenHome}/bin/mvn --version"
             }
 
