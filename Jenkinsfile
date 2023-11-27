@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        checkout([$class: 'GitSCM', branches: [[name: 'main']], userRemoteConfigs: [[url: 'https://github.com/Skhila/designPatterns_homework.git']]])
+        checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/Skhila/designPatterns_homework.git']]])
       }
     }
 
@@ -12,8 +12,7 @@ pipeline {
         stage('Build Project') {
           steps {
             script {
-              def mavenHome = tool 'MyMaven'
-              sh "${mavenHome}/bin/mvn clean install"
+              sh 'mvn clean test'
             }
 
           }
@@ -22,8 +21,7 @@ pipeline {
         stage('Get Maven Version') {
           steps {
             script {
-              def mavenHome = tool 'MyMaven'
-              sh "${mavenHome}/bin/mvn --version"
+              sh 'mvn --version'
             }
 
           }
